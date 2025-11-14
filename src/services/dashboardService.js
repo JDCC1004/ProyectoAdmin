@@ -9,3 +9,19 @@ export const obtenerResumen = async () => {
     });
     return data.data;
 };
+
+export const obtenerPorCategoria = async () => {
+    const token = localStorage.getItem("token");
+    const { data } = await axios.get(`${API_URL}/por-categoria`, {
+        headers: { Authorization: `Bearer ${token}` }
+    });
+    return data.data;
+}
+
+export const obtenerActividadReciente = async () => {
+    const token = localStorage.getItem("token");
+    const { data } = await axios.get(`${API_URL}/actividad-reciente`, {
+        headers: { Authorization: `Bearer ${token}` }
+    });
+    return data.data;
+}
